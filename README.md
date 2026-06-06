@@ -1,8 +1,10 @@
 # antigravity.nvim
 
-`antigravity.nvim` is a Neovim plugin that integrates the **Antigravity AI Assistant** directly into your editor using a persistent floating terminal. 
+`antigravity.nvim` is a Neovim plugin that integrates the **Antigravity AI Assistant**
+directly into your editor using a persistent floating terminal.
 
-It keeps the context alive between toggles so you can chat with the AI, drop down into the terminal, and quickly jump back to your code.
+It keeps the context alive between toggles so you can chat with the AI, drop down
+into the terminal, and quickly jump back to your code.
 
 ## Installation
 
@@ -12,7 +14,7 @@ You can install this plugin using any popular Neovim package manager.
 
 ```lua
 {
-    dir = "/home/swd/.gemini/antigravity-cli/scratch/antigravity.nvim", -- Update this path to where you moved the directory!
+    "NakLast/antigravity-cli.nvim",
     config = function()
         require("antigravity").setup({
             -- You can override the default command here if needed
@@ -28,13 +30,16 @@ You can install this plugin using any popular Neovim package manager.
 ## Usage
 
 Simply run:
+
 ```vim
 :Antigravity
 ```
-This will open a floating terminal running the CLI. 
+
+This will open a floating terminal running the CLI.
 Run `:Antigravity` again to hide it without losing your session!
 
 You can also bind it to a key for quicker access. For example:
+
 ```lua
 vim.keymap.set('n', '<leader>ag', '<cmd>Antigravity<cr>', { desc = 'Toggle Antigravity' })
 ```
@@ -42,6 +47,7 @@ vim.keymap.set('n', '<leader>ag', '<cmd>Antigravity<cr>', { desc = 'Toggle Antig
 ## Configuration
 
 You can customize the floating window and the command to run:
+
 ```lua
 require("antigravity").setup({
     cmd = "antigravity-cli", -- Default command to spawn the agent
@@ -50,4 +56,3 @@ require("antigravity").setup({
     border = "rounded",      -- Window border style
 })
 ```
-# antigravity-cli.nvim
